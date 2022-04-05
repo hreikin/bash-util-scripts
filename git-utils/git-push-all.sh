@@ -30,7 +30,7 @@ set -o errtrace         # Ensure the error trap handler is inherited
 function git_push_all() {
     echo Pushing all pre-configured git projects.
 
-    # For each directory in GIT_DIRS variable, change into it and then run "git push 
+    # For each directory in GIT_DIRS variable, change into it and then run "git push
     # origin main".
     for dir in ${GIT_DIRS[@]}; do
         cd $dir
@@ -67,9 +67,10 @@ function parse_params() {
                 script_usage
                 exit 0
                 ;;
-            -d | --dirs)
-                git_push_all
-                exit 0
+            # -d | --dirs)
+            #     git_push_all
+            #     exit 0
+            #     ;;
             -v | --verbose)
                 verbose=true
                 ;;
