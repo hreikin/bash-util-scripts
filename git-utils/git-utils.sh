@@ -10,16 +10,20 @@ GIT_DIRS=(
     '/home/hreikin/git/simple-python-project-template'
 )
 
-echo Updating all pre-configured git projects.
+function git_push_all {
+    echo Updating all pre-configured git projects.
 
-# For each directory in GIT_DIRS variable, change into it and then run "git push 
-# origin main".
-for dir in ${GIT_DIRS[@]}; do
-    cd $dir
-    echo $dir
-    git push origin main
+    # For each directory in GIT_DIRS variable, change into it and then run "git push 
+    # origin main".
+    for dir in ${GIT_DIRS[@]}; do
+        cd $dir
+        echo $dir
+        git push origin main
 
-done
+    done
+    return
+}
 
+git_push_all
 echo Process Complete, exiting.
 exit 0
