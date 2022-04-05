@@ -1,13 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 # A simple script to push all provided git repositories to Github, Gitlab, etc.
 # Tested only with SSH keys configured on the host system.
 
 # Array containing directories of git projects.
 GIT_DIRS=(
-    '/home/hreikin/git/tkintermd'
-    '/home/hreikin/git/pymd-editor'
+    '/home/hreikin/git/bash-util-scripts'
     '/home/hreikin/git/gen-pygments-css'
+    '/home/hreikin/git/pdf-toolbox'
+    '/home/hreikin/git/pymd-editor'
+    '/home/hreikin/git/python-utilities'
     '/home/hreikin/git/simple-python-project-template'
+    '/home/hreikin/git/tkintermd'
 )
 
 function git_push_all {
