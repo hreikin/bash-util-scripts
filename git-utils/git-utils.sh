@@ -11,7 +11,7 @@ GIT_DIRS=(
 )
 
 function git_push_all {
-    echo Updating all pre-configured git projects.
+    echo Pushing all pre-configured git projects.
 
     # For each directory in GIT_DIRS variable, change into it and then run "git push 
     # origin main".
@@ -24,6 +24,21 @@ function git_push_all {
     return
 }
 
+function git_pull_all {
+    echo Pulling all pre-configured git projects.
+
+    # For each directory in GIT_DIRS variable, change into it and then run "git push 
+    # origin main".
+    for dir in ${GIT_DIRS[@]}; do
+        cd $dir
+        echo $dir
+        git pull origin main
+
+    done
+    return
+}
+
+git_pull_all
 git_push_all
 echo Process Complete, exiting.
 exit 0
